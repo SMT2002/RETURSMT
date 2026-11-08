@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RETUR 2002 SMT</title>
+<style>
+:root{--bg:#141a30;--bg2:#251d47;--sf:#1d2339;--sf2:#252c47;--ink:#eef1fb;--mu:#98a2c3;--ln:#2e3656;--ac:#22d3ee;--acf:#06222b;--rt:#fb7a3c;--dl:#3b9cff;--pk:#b46cff;--ok:#10b981;--sh:0 10px 30px -14px #000;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+:root[data-theme="light"]{--bg:#eef0fa;--bg2:#e4e2f6;--sf:#fff;--sf2:#f3f4fc;--ink:#1a2040;--mu:#5d6791;--ln:#d8dcf0;--ac:#0891b2;--acf:#fff;--rt:#e0561a;--dl:#2563eb;--pk:#8b3fe0;--ok:#0e9f6e;--sh:0 8px 24px -14px rgba(40,40,100,.35);color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%) fixed;min-height:100vh;color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#3b82f6,#a855f7,#22d3ee) 1}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.01em}
+.brand i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#22d3ee,#a855f7);display:grid;place-items:center;color:#fff;font-style:normal;font-size:16px}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--mu);letter-spacing:0}
+button{font:inherit;color:inherit;cursor:pointer}
+.brand div{background:linear-gradient(90deg,#22d3ee,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}.brand small{color:var(--mu)}
+.card{border-radius:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.k-dl label,.k-pk label,.chip.k-dl span,.chip.k-pk span,.tk.k-dl .tag,.tk.k-pk .tag,.dots .k-dl,.dots .k-pk{text-transform:uppercase}
+#dash{margin-bottom:16px}
+.seg{display:flex;gap:6px;margin:10px 0 12px}.seg button{flex:1;border:1px solid var(--ln);background:var(--sf2);border-radius:10px;padding:8px 4px;font-weight:600;font-size:13px;min-height:40px}.seg button.on{border-color:var(--ac);color:var(--ac)}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}@media(max-width:560px){.kp{grid-template-columns:repeat(2,1fr)}}
+.kp div{border-radius:14px;padding:12px;color:#fff}.kp b{font-size:26px;display:block;line-height:1.1}.kp span{font-size:12px;opacity:.92}
+.kp div:nth-child(1){background:linear-gradient(135deg,#2563eb,#22d3ee)}.kp div:nth-child(2){background:linear-gradient(135deg,#8b5cf6,#ec4899)}.kp div:nth-child(3){background:linear-gradient(135deg,#059669,#06b6d4)}.kp div:nth-child(4){background:linear-gradient(135deg,#f97316,#f43f5e)}
+.spark{display:flex;align-items:flex-end;gap:6px;height:100px;margin:18px 0 6px}.spark div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:11px;color:var(--mu);gap:3px}.spark i{display:block;width:100%;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#22d3ee,#3b82f6);min-height:3px}
+.sr{display:grid;grid-template-columns:1fr auto;gap:4px 10px;border-top:1px dashed var(--ln);padding:11px 0}.sr .nm{font-weight:600}.sr .nw{font-size:10.5px;font-weight:700;background:var(--ok);color:#03231c;border-radius:20px;padding:1px 7px;margin-left:6px}.sr small{color:var(--mu);font-size:12px}
+.bar{grid-column:1/-1;height:6px;border-radius:6px;background:var(--sf2);overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#10b981,#22d3ee)}
+.dots{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--mu)}.dots b{color:var(--c)}
+.clk{text-align:right;line-height:1.15}.clk b{font-size:18px;font-variant-numeric:tabular-nums;letter-spacing:.02em}.clk small{display:block;font-size:11px;color:var(--mu)}
+.quote{border-left:4px solid var(--ac);border-radius:6px 18px 18px 6px;padding:14px 16px;margin-bottom:16px;font-style:italic;background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 14%,var(--sf)),color-mix(in srgb,var(--pk) 14%,var(--sf)))}
+#nav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--sf);border-top:1px solid var(--ln);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
+#nav button{flex:1;border:0;background:none;color:var(--mu);font-weight:600;padding:10px 4px;min-height:44px;border-radius:10px}#nav button.on{color:var(--ac)}
+#nav{display:flex;justify-content:center}.wrap{padding-bottom:84px;max-width:720px}body:not([data-tab="form"]) #form{display:none}body:not([data-tab="list"]) #lst{display:none}body:not([data-tab="dash"]) #dash,body:not([data-tab="dash"]) #top{display:none}body:not([data-tab="admin"]) #adm{display:none}.chip b{background:linear-gradient(90deg,var(--c,var(--ac)),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ib{border:1px solid var(--ln);background:var(--sf);border-radius:10px;width:38px;height:38px}
+.grid{display:grid;gap:16px}
+@media(min-width:860px){.grid{grid-template-columns:400px 1fr;align-items:start}#form{position:sticky;top:12px}}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:16px;box-shadow:var(--sh)}
+h2{margin:0 0 2px;font-size:17px}.sub{color:var(--mu);font-size:13px;margin:0 0 14px}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 5px}
+input,select{width:100%;background:var(--sf2);border:1px solid var(--ln);border-radius:10px;padding:10px 12px;font:inherit;color:var(--ink);min-height:42px}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+input[readonly]{color:var(--mu);font-style:italic}
+.row{display:grid;grid-template-columns:1fr 84px;gap:8px}
+.art{background:var(--sf2);border:1px solid var(--ln);border-radius:12px;padding:10px 12px 12px;margin-top:10px;position:relative}
+.art .t{font-size:12px;color:var(--mu);display:flex;justify-content:space-between;align-items:center}
+.art .x{border:0;background:none;color:var(--mu);font-size:18px;line-height:1;padding:2px 6px}
+.art input{background:var(--sf)}
+.mc{font-size:12px;color:var(--mu);margin-top:6px}
+.btn{border:0;border-radius:12px;background:linear-gradient(90deg,#3b82f6,#22d3ee);color:#04202a;font-weight:700;padding:11px 14px;min-height:44px;width:100%}
+.btn.ghost{background:none;border:1px dashed var(--ln);color:var(--ac);margin-top:10px}
+.kinds{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.kinds input{position:absolute;opacity:0;pointer-events:none}
+.kinds label{margin:0;border:1.5px solid var(--ln);border-radius:12px;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:600;cursor:pointer;background:var(--sf2)}
+.kinds input:checked+label{border-color:var(--c);color:var(--c);background:color-mix(in srgb,var(--c) 10%,var(--sf))}
+.kinds label::before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--c);margin:0 auto 6px}
+.k-pm{--c:#10b981}.k-dl{--c:var(--dl)}.k-pk{--c:var(--pk)}.k-rt{--c:var(--rt)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin:12px 0}
+.chip{flex:0 0 auto;border:1px solid var(--ln);background:var(--sf2);border-radius:12px;padding:8px 12px;text-align:left;min-width:92px}
+.chip b{display:block;font-size:22px;line-height:1.1}.chip span{font-size:12px;color:var(--mu)}
+.chip[aria-pressed=true]{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 10%,var(--sf))}
+.tk{border:1px solid var(--ln);border-left:5px solid var(--c);border-radius:6px 14px 14px 6px;background:var(--sf);padding:12px 14px;margin-top:12px;position:relative}
+.tk h3{margin:0;font-size:15px}.tk .meta{font-size:12px;color:var(--mu)}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;border-radius:20px;padding:2px 9px;color:var(--c);background:color-mix(in srgb,var(--c) 12%,var(--sf))}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:start}
+.code{font-variant-numeric:tabular-nums;font-weight:700;background:var(--sf2);border:1px solid var(--ln);border-radius:7px;padding:1px 7px;margin-right:6px}
+.li{font-size:13px;padding:6px 0;border-top:1px dashed var(--ln);display:flex;justify-content:space-between;gap:8px}
+.li:first-of-type{margin-top:8px}.li em{font-style:normal;color:var(--mu);font-size:12px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:10px}
+.steps button{border:0;border-radius:8px;background:var(--sf2);color:var(--mu);font-size:12px;font-weight:600;padding:7px 4px;min-height:34px}
+.steps button.on{background:linear-gradient(90deg,#10b981,#06b6d4);color:#03231c}
+.steps button.cur{background:var(--ok);color:#fff}
+.edit{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-top:10px;align-items:end}
+.edit label{margin:0 0 3px;font-size:11.5px;color:var(--mu);font-weight:600}
+.edit .btn{width:auto;min-height:42px;padding:0 14px}
+@media(max-width:520px){.edit{grid-template-columns:1fr 1fr}.edit .btn{grid-column:1/-1;width:100%}}
+.ft{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;color:var(--mu)}
+.ft button{border:0;background:none;color:var(--rt);font-size:12px}
+.empty{text-align:center;color:var(--mu);padding:28px 8px;border:1px dashed var(--ln);border-radius:14px;margin-top:12px}
+#toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;opacity:0;transition:.25s;pointer-events:none;font-size:14px}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+/* glass */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(42vmax 42vmax at 8% 6%,rgba(34,211,238,.38),transparent 62%),radial-gradient(46vmax 46vmax at 96% 32%,rgba(168,85,247,.38),transparent 62%),radial-gradient(42vmax 42vmax at 28% 100%,rgba(236,72,153,.28),transparent 62%)}
+:root[data-theme="light"] body::before{opacity:.55}
+.card,.quote,#nav,.ib{-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%)}
+.card{background:color-mix(in srgb,var(--sf) 52%,transparent);border:1px solid color-mix(in srgb,var(--ink) 14%,transparent);box-shadow:var(--sh),inset 0 1px 0 color-mix(in srgb,#fff 28%,transparent)}
+.quote{border-top:1px solid color-mix(in srgb,var(--ink) 12%,transparent);border-right:1px solid color-mix(in srgb,var(--ink) 12%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent);background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 16%,transparent),color-mix(in srgb,var(--pk) 16%,transparent))}
+#nav{background:color-mix(in srgb,var(--sf) 62%,transparent)}
+.ib{background:color-mix(in srgb,var(--sf) 55%,transparent)}
+input,select,.art,.art input,.tk,.chip,.seg button,.steps button,.kinds label,.code{background:color-mix(in srgb,var(--sf2) 50%,transparent);border-color:color-mix(in srgb,var(--ink) 13%,transparent)}
+.tk{border-left-color:var(--c);box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 16%,transparent)}
+.art{box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 14%,transparent)}
+.steps button.on{background:linear-gradient(90deg,#10b981,#06b6d4)}
+.btn{box-shadow:0 8px 22px -8px rgba(34,211,238,.6),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn.ghost{background:none;box-shadow:none}
+.chip[aria-pressed=true],.seg button.on{box-shadow:0 0 0 1px var(--ac),0 6px 18px -8px var(--ac)}
+#nav button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px}
+#top{margin-bottom:16px}.hb{margin-top:12px}.hl{display:flex;justify-content:space-between;gap:8px;font-size:13px}.hl span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hl em{font-style:normal;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:6px;font-size:12px;font-weight:700;margin-right:8px;background:color-mix(in srgb,var(--ac) 20%,transparent);color:var(--ac)}
+.ht{height:14px;border-radius:8px;background:color-mix(in srgb,var(--sf2) 60%,transparent);margin-top:5px;overflow:hidden}.ht div{height:100%;display:flex;border-radius:8px;overflow:hidden}.ht i{display:block;background:var(--c)}
+.lg{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:12px;color:var(--mu);margin-top:14px}.lg span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:5px}.lg .k-dl,.lg .k-pk{text-transform:uppercase}
+/* v2 */
+.grid{display:block!important}#form{position:static!important}
+#nav button{max-width:180px}#nav button[data-t=form]{order:1}#nav button[data-t=dash]{order:2}#nav button[data-t=list]{order:3}
+#ld{position:fixed;inset:0;z-index:99;display:grid;place-content:center;justify-items:center;gap:14px;background:linear-gradient(160deg,#0f1530,#2a1b52);color:#fff;transition:opacity .5s,visibility .5s}#ld.off{opacity:0;visibility:hidden}#ld b{font-size:20px;letter-spacing:.12em}#ld small{color:#9aa6d0}
+.ldl{filter:drop-shadow(0 0 16px rgba(34,211,238,.65));animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.12) rotate(5deg)}}
+.ldbar{width:190px;height:5px;border-radius:5px;background:rgba(255,255,255,.15);overflow:hidden}.ldbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3b82f6,#a855f7,#22d3ee);animation:ldb 1.3s ease forwards}@keyframes ldb{to{width:100%}}
+body::before{animation:drift 22s ease-in-out infinite alternate}@keyframes drift{to{transform:translate(-3%,2%) scale(1.14)}}
+.brand i{animation:flt 3.2s ease-in-out infinite;box-shadow:0 0 18px rgba(34,211,238,.55)}@keyframes flt{50%{transform:translateY(-3px) rotate(-8deg)}}
+.btn:active,.toret:active{transform:scale(.97)}
+.empty::before{content:"📦";display:block;font-size:36px;margin-bottom:6px;animation:flt 3s ease-in-out infinite}
+.dwrap{display:flex;align-items:center;gap:16px;margin:6px 0 10px}#donut{width:140px;height:140px;flex:none}#donut .tr{stroke:color-mix(in srgb,var(--ink) 10%,transparent)}#donut .sg{stroke:var(--c);animation:dn 1s ease-out both}@keyframes dn{from{stroke-dasharray:0 276.46}}
+.dt1{font-size:24px;font-weight:700;fill:var(--ink)}.dt2{font-size:8px;fill:var(--mu)}
+#dlg{flex:1;display:grid;gap:8px}#dlg div{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:7px 10px;border-radius:10px;background:color-mix(in srgb,var(--sf2) 50%,transparent);border-left:4px solid var(--c)}#dlg .k-dl span,#dlg .k-pk span{text-transform:uppercase}#lg{display:none}
+.steps.ro span{border-radius:8px;background:color-mix(in srgb,var(--sf2) 55%,transparent);color:var(--mu);font-size:12px;font-weight:600;padding:7px 4px;text-align:center}.steps.ro span.on{background:linear-gradient(90deg,#10b981,#06b6d4);color:#03231c}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.info small{display:block;color:var(--mu);font-size:11.5px}.info b{font-size:13px;word-break:break-word}
+.tools{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.tools select{flex:1;min-width:150px}.toret{border:0;border-radius:10px;background:linear-gradient(90deg,#f97316,#f43f5e);color:#fff;font-weight:700;padding:0 14px;min-height:42px}
+#adm .seg{margin-bottom:10px}#adm .seg button{font-size:12px}
+#pin{position:fixed;inset:0;z-index:60;display:none;place-items:center;background:rgba(5,8,20,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:20px}#pin.on{display:grid}.pbox{width:100%;max-width:340px;background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:20px}.pbt{display:flex;gap:8px;margin-top:14px}.pbt .btn{flex:1}#toast{z-index:70}
+.chip[data-f="BELUM READY"]{--c:#f43f5e}
+.steps{grid-template-columns:repeat(4,1fr)!important}.steps button,.steps.ro span{font-size:11.5px!important;transition:opacity .3s,background .3s}
+.steps .dim{opacity:.3}
+.steps button.on.s0,.steps.ro span.on.s0{background:linear-gradient(90deg,#64748b,#94a3b8);color:#fff}
+.steps button.on.s2,.steps.ro span.on.s2{background:linear-gradient(90deg,#3b82f6,#8b5cf6);color:#fff}
+.steps button.on.s3,.steps.ro span.on.s3{background:linear-gradient(90deg,#f97316,#f43f5e);color:#fff}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body data-tab="dash">
+<div id="ld"><svg class="ldl" viewBox="0 0 64 64" width="88" height="88"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><path d="M32 6l22 12v26L32 58 10 44V18z" fill="none" stroke="url(#lg1)" stroke-width="3" stroke-linejoin="round"/><path d="M10 18l22 12 22-12M32 30v28" fill="none" stroke="url(#lg1)" stroke-width="3" stroke-linejoin="round"/></svg><b>RETUR 2002 SMT</b><div class="ldbar"><i></i></div><small>Memuat data…</small></div>
+<div class="wrap">
+<header>
+  <div class="brand"><i>↺</i><div>RETUR 2002 SMT<small>LINK UNTUK RETUR DAN REKAP RETURAN</small></div></div>
+  <div class="clk"><b id="clk">--:--:--</b><small id="dt"></small></div>
+  <div style="display:flex;gap:8px"><button class="ib" id="adminBtn" aria-label="Admin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></button><button class="ib" id="theme" aria-label="Ganti tema">◐</button></div>
+</header>
+<div class="quote">Barang kembali dengan rapi, pekerjaan pun lebih tenang.</div>
+<div style="text-align:center;font-size:12px;letter-spacing:.08em;color:var(--mu);margin:-6px 0 16px">DIBUAT OLEH MUHAMAD REZA PRADANA<br><span id="conn">○ Mode lokal (belum tersambung ke spreadsheet)</span></div>
+<section class="card" id="top">
+  <h2>Dashboard Permintaan Retur</h2>
+  <p class="sub">Lima toko dengan permintaan terbanyak, semua waktu.</p>
+  <div class="dwrap"><svg id="donut" viewBox="0 0 120 120"></svg><div id="dlg"></div></div>
+  <div id="topbars"></div>
+  <div class="lg" id="lg"></div>
+</section>
+<section class="card" id="dash">
+  <h2>Dashboard</h2>
+  <p class="sub">Toko yang baru menginput retur, diurutkan dari yang terbaru.</p>
+  <div class="seg" id="range"><button data-r="1">Hari ini</button><button data-r="7" class="on">7 hari</button><button data-r="0">Semua</button></div>
+  <div class="kp" id="kp"></div>
+  <div class="spark" id="spark"></div>
+  <div id="stores"></div>
+</section>
+<div class="grid">
+<section class="card" id="form">
+  <h2>Buat permintaan</h2>
+  <p class="sub">Isi sesuai master site dan master artikel.</p>
+  <label for="site">Kode site</label>
+  <input id="site" list="sites" inputmode="numeric" placeholder="mis. 2008" autocomplete="off">
+  <datalist id="sites"></datalist>
+  <label for="sname">Nama site</label>
+  <input id="sname" readonly placeholder="Terisi otomatis dari master site">
+  <label>Artikel</label>
+  <div id="arts"></div>
+  <button class="btn ghost" id="addArt" type="button">+ Tambah artikel</button>
+  <label>Kebutuhan</label>
+  <div class="kinds">
+    <div class="k-dl"><input type="radio" name="kind" id="k1" value="EA Delivery"><label for="k1">EA Delivery</label></div>
+    <div class="k-pk"><input type="radio" name="kind" id="k2" value="EA Pick Up"><label for="k2">EA Pick Up</label></div>
+    <div class="k-rt"><input type="radio" name="kind" id="k3" value="Retur Barang" checked><label for="k3">Retur Barang</label></div>
+    <div class="k-pm"><input type="radio" name="kind" id="k4" value="PEMINJAMAN BARANG"><label for="k4">PEMINJAMAN BARANG</label></div>
+  </div>
+  <label for="exp">Ekspedisi</label>
+  <select id="exp"><option value="">Pilih ekspedisi</option><option>CSS</option><option>JNE</option><option>J&amp;T</option><option>SiCepat</option><option>Kurir internal</option></select>
+  <div style="height:16px"></div>
+  <button class="btn" id="submit" type="button">Kirim permintaan</button>
+</section>
+
+<section class="card" id="adm">
+  <h2>Admin</h2>
+  <p class="sub">Proses permintaan: tandai READY, isi keterangan dan No. STO, atau ubah kategori.</p>
+  <div class="seg" id="afs"></div>
+  <input id="aq" type="search" placeholder="Cari toko, artikel, atau No. STO">
+  <div id="admlist"></div>
+</section>
+<section class="card" id="lst">
+  <h2>Riwayat</h2>
+  <p class="sub">Ketuk ringkasan untuk menyaring berdasarkan kebutuhan.</p>
+  <div class="chips" id="chips"></div>
+  <input id="q" type="search" placeholder="Cari kode site, artikel, atau nomor STO">
+  <div id="list"></div>
+</section>
+</div>
+</div>
+<nav id="nav"><button data-t="form" class="on"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9 14h6"/></svg>Form</button><button data-t="list"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Riwayat</button><button data-t="dash"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Dashboard</button></nav>
+<div id="pin"><div class="pbox"><h2>Masuk Admin</h2><p class="sub">Masukkan PIN untuk membuka halaman admin.</p><input id="pinv" type="password" inputmode="numeric" placeholder="PIN" autocomplete="off"><div class="pbt"><button class="ib" id="pinx" style="width:auto;padding:0 16px">Batal</button><button class="btn" id="pinok">Masuk</button></div></div></div>
+<div id="toast" role="status"></div>
+
+<script>
+// Ganti dengan data master Anda sendiri
+const SITES={"2008":"Store Contoh Bogor","2239":"Store Contoh Cibadak","1101":"Store Contoh Jakarta","3005":"Store Contoh Bandung"};
+const ARTS={"910008424008":["LACERTA MEN GREY","FOOTWEAR","A-01-03"],"910002201005":["TRAVEL BAG 40L","BAGS","B-02-11"],"910005512003":["RAIN JACKET W","APPAREL","C-04-07"],"910007730001":["HIKING SOCK 3PK","ACCESSORIES","D-01-02"]};
+const KC={"EA Delivery":"k-dl","EA Pick Up":"k-pk","Retur Barang":"k-rt","PEMINJAMAN BARANG":"k-pm"};
+const STEPS=["Baru","READY","Selesai","NO STOCK"],ORD=[0,1,3,2];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let items=[],filter="Semua",rows=[];
+const API="https://script.google.com/macros/s/AKfycbzEQW2JoRxLh0veAJdg6KAD5k26J6Q6Ds3BxTWKkLyhaE8Gqssv0kQry_OpwWfLFzaV/exec"; // URL Web App berakhiran /exec
+const REMOTE=API.startsWith("https://");
+let snap={};
+if(!REMOTE){try{items=JSON.parse(localStorage.getItem("retur")||"[]")}catch(e){}}
+const post=b=>fetch(API,{method:"POST",body:JSON.stringify(b)}).then(r=>r.json()).catch(()=>toast("Gagal menyimpan, periksa koneksi"));
+function save(){
+  if(!REMOTE){try{localStorage.setItem("retur",JSON.stringify(items))}catch(e){}return}
+  const seen={};
+  items.forEach(i=>{seen[i.id]=1;const s=JSON.stringify(i),old=snap[i.id];if(old===s)return;snap[i.id]=s;post({action:old===undefined?"add":"update",item:i})});
+  Object.keys(snap).forEach(id=>{if(!seen[id]){delete snap[id];post({action:"delete",id:id})}});
+}
+function fillLists(){
+  $("#sites").innerHTML=Object.keys(SITES).map(k=>`<option value="${k}">${esc(SITES[k])}</option>`).join("");
+  $("#artlist").innerHTML=Object.keys(ARTS).map(k=>`<option value="${k}">${esc(ARTS[k][0])}</option>`).join("");
+}
+async function load(){
+  try{
+    const d=await(await fetch(API+"?action=all")).json();
+    Object.keys(SITES).forEach(k=>delete SITES[k]);Object.assign(SITES,d.sites);
+    Object.keys(ARTS).forEach(k=>delete ARTS[k]);Object.assign(ARTS,d.arts);
+    items=d.items;snap={};items.forEach(i=>snap[i.id]=JSON.stringify(i));
+    fillLists();render();
+    $("#conn").innerHTML='<span style="color:var(--ok)">\u25cf</span> Tersambung ke spreadsheet';
+  }catch(e){$("#conn").textContent="\u25cb Gagal memuat dari spreadsheet";toast("Gagal memuat data dari spreadsheet")}
+}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),2200)}
+
+$("#sites").innerHTML=Object.keys(SITES).map(k=>`<option value="${k}">${esc(SITES[k])}</option>`).join("");
+function findKey(map,q,nameOf){q=q.trim().toLowerCase();if(!q)return null;const ks=Object.keys(map);const ex=ks.find(x=>x.toLowerCase()===q);if(ex)return ex;if(q.length<3)return null;const m=ks.filter(x=>x.toLowerCase().startsWith(q)||nameOf(map[x]).toLowerCase().includes(q));return m.length===1?m[0]:null}
+$("#site").oninput=e=>{const k=findKey(SITES,e.target.value,n=>n);e.target.dataset.key=k||"";$("#sname").value=k?SITES[k]:""};
+$("#site").onchange=e=>{if(e.target.dataset.key)e.target.value=e.target.dataset.key};
+
+function artRow(){
+  const d=document.createElement("div");d.className="art";
+  d.innerHTML=`<div class="t"><span>Artikel</span><button class="x" type="button" aria-label="Hapus artikel">×</button></div>
+  <div class="row"><div><label>Kode artikel</label><input class="ac" list="artlist" inputmode="numeric" placeholder="mis. 910008424008"></div>
+  <div><label>Jumlah</label><input class="qt" type="number" min="1" value="1"></div></div>
+  <label>Nama artikel</label><input class="an" readonly placeholder="Terisi otomatis dari master"><div class="row2"><div><label>BIN</label><input class="bn" readonly placeholder="Otomatis"></div><div><label>MC Lv 3</label><input class="mcv" readonly placeholder="Otomatis"></div></div>`;
+  d.querySelector(".ac").oninput=e=>{const k=findKey(ARTS,e.target.value,a=>a[0]),a=k?ARTS[k]:null;d.dataset.key=k||"";d.querySelector(".an").value=a?a[0]:"";d.querySelector(".bn").value=a?a[2]:"";d.querySelector(".mcv").value=a?a[1]:""};
+  d.querySelector(".ac").onchange=e=>{if(d.dataset.key)e.target.value=d.dataset.key};
+  d.querySelector(".x").onclick=()=>{if($("#arts").children.length>1)d.remove()};
+  $("#arts").appendChild(d);
+}
+const dl=document.createElement("datalist");dl.id="artlist";dl.innerHTML=Object.keys(ARTS).map(k=>`<option value="${k}">${esc(ARTS[k][0])}</option>`).join("");document.body.appendChild(dl);
+$("#addArt").onclick=artRow;artRow();
+
+$("#submit").onclick=()=>{
+  const code=$("#site").dataset.key||$("#site").value.trim(),kind=document.querySelector("[name=kind]:checked").value,exp=$("#exp").value;
+  const arts=[...document.querySelectorAll(".art")].map(d=>{const c=d.dataset.key||d.querySelector(".ac").value.trim(),a=ARTS[c];return{code:c,name:a?a[0]:"",mc:a?a[1]:"",bin:a?a[2]:"",qty:Math.max(1,+d.querySelector(".qt").value||1)}}).filter(a=>a.code);
+  if(!SITES[code])return toast("Kode site tidak ditemukan di master");
+  if(!arts.length)return toast("Isi minimal satu artikel");
+  if(arts.some(a=>!a.name))return toast("Ada kode artikel yang tidak ada di master");
+  if(!exp)return toast("Pilih ekspedisi dulu");
+  items.unshift({id:Date.now(),site:code,sname:SITES[code],kind,exp,arts,step:0,note:"",sto:"",at:new Date().toISOString()});
+  save();render();
+  $("#site").value="";$("#site").dataset.key="";$("#sname").value="";$("#arts").innerHTML="";artRow();$("#exp").value="";
+  toast("Permintaan terkirim");document.body.dataset.tab="list";document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.t==="list"));scrollTo(0,0);
+};
+
+let rng=7;
+function ago(t){const m=Math.floor((Date.now()-t)/6e4);if(m<1)return"baru saja";if(m<60)return m+" menit lalu";const h=Math.floor(m/60);if(h<24)return h+" jam lalu";return Math.floor(h/24)+" hari lalu"}
+function renderDash(){
+  const t0=new Date();t0.setHours(0,0,0,0);const d0=t0.getTime();
+  const from=rng===0?0:rng===1?d0:d0-6*864e5;
+  const v=items.filter(i=>new Date(i.at).getTime()>=from);
+  const g={};
+  v.forEach(i=>{const s=g[i.site]||(g[i.site]={site:i.site,name:i.sname,last:0,n:0,q:0,done:0,k:{}});s.last=Math.max(s.last,new Date(i.at).getTime());s.n++;s.q+=i.arts.reduce((a,b)=>a+b.qty,0);if(i.step===2)s.done++;s.k[i.kind]=(s.k[i.kind]||0)+1});
+  const L=Object.values(g).sort((a,b)=>b.last-a.last);
+  const today=new Set(items.filter(i=>new Date(i.at).getTime()>=d0).map(i=>i.site)).size;
+  $("#kp").innerHTML=[[v.length,"Permintaan"],[L.length,"Toko menginput"],[L.reduce((a,s)=>a+s.q,0),"Total qty"],[today,"Toko input hari ini"]].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
+  document.querySelectorAll("#kp b").forEach(countUp);
+  const days=[...Array(7)].map((_,n)=>{const d=new Date(d0-(6-n)*864e5);return{l:d.toLocaleDateString("id-ID",{weekday:"short"}),c:items.filter(i=>{const t=new Date(i.at).getTime();return t>=d.getTime()&&t<d.getTime()+864e5}).length}});
+  const mx=Math.max(1,...days.map(d=>d.c));
+  $("#spark").innerHTML=days.map(d=>`<div>${d.c}<i style="height:${Math.round(d.c/mx*70)}px"></i>${d.l}</div>`).join("");
+  $("#stores").innerHTML=L.length?L.map(s=>`<div class="sr"><div><span class="nm">${esc(s.site)} · ${esc(s.name)}</span>${Date.now()-s.last<864e5?'<span class="nw">BARU</span>':""}<br><small>Input terakhir ${ago(s.last)}</small></div><div style="text-align:right"><b>${s.n}</b><br><small>permintaan · ${s.q} qty</small></div><div class="dots">${Object.entries(s.k).map(([k,c])=>`<span class="${KC[k]||""}"><b>${c}</b> ${esc(k)}</span>`).join("")}<span>${s.done}/${s.n} selesai</span></div><div class="bar"><i style="width:${Math.round(s.done/s.n*100)}%"></i></div></div>`).join(""):'<div class="empty">Belum ada toko yang menginput retur pada periode ini.</div>';
+}
+function renderTop(){
+  const g={};items.forEach(i=>{const s=g[i.site]||(g[i.site]={site:i.site,name:i.sname,n:0,k:{}});s.n++;s.k[i.kind]=(s.k[i.kind]||0)+1});
+  const L=Object.values(g).sort((a,b)=>b.n-a.n).slice(0,5),mx=L.length?L[0].n:1;
+  $("#topbars").innerHTML=L.length?L.map((s,n)=>`<div class="hb"><div class="hl"><span><em>${n+1}</em>${esc(s.site)} · ${esc(s.name)}</span><b>${s.n}x</b></div><div class="ht"><div style="width:${Math.max(6,Math.round(s.n/mx*100))}%">${Object.entries(s.k).map(([k,c])=>`<i class="${KC[k]||""}" style="flex:${c}"></i>`).join("")}</div></div></div>`).join(""):'<div class="empty">Belum ada data. Grafik muncul setelah permintaan pertama dikirim.</div>';
+  $("#lg").innerHTML=Object.keys(KC).map(k=>`<span class="${KC[k]}">${esc(k)}</span>`).join("");
+  const tot={};items.forEach(i=>tot[i.kind]=(tot[i.kind]||0)+1);const T=items.length,C=276.46;let off=0;
+  $("#donut").innerHTML='<circle class="tr" cx="60" cy="60" r="44" fill="none" stroke-width="14"/>'+Object.entries(tot).map(([k,c])=>{const l=c/T*C,s=`<circle class="sg ${KC[k]||""}" cx="60" cy="60" r="44" fill="none" stroke-width="14" stroke-dasharray="${l} ${C-l}" stroke-dashoffset="${-off}" transform="rotate(-90 60 60)"/>`;off+=l;return s}).join("")+`<text x="60" y="60" text-anchor="middle" class="dt1">${T}</text><text x="60" y="73" text-anchor="middle" class="dt2">permintaan</text>`;
+  $("#dlg").innerHTML=Object.keys(KC).map(k=>`<div class="${KC[k]}"><span>${esc(k)}</span><b>${tot[k]||0}</b></div>`).join("");
+}
+function countUp(el){const v=+el.textContent||0;if(!v)return;const t0=performance.now();(function f(n){const p=Math.min(1,(n-t0)/700);el.textContent=Math.round(v*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}
+function renderAdmin(){
+  const q=$("#aq").value.trim().toLowerCase();
+  $("#afs").innerHTML=[[-1,"Semua"],...ORD.map(n=>[n,STEPS[n]])].map(([v,l])=>`<button data-a="${v}" class="${afs===v?"on":""}">${l} (${v===-1?items.length:items.filter(i=>i.step===v).length})</button>`).join("");
+  const v=items.filter(i=>(afs===-1||i.step===afs)&&(!q||(i.site+i.sname+i.sto+i.arts.map(a=>a.code+a.name).join(" ")).toLowerCase().includes(q)));
+  $("#admlist").innerHTML=v.length?v.map(i=>`<article class="tk ${KC[i.kind]||""}" data-id="${i.id}">
+    <div class="top"><div><h3><span class="code">${esc(i.site)}</span>${esc(i.sname)}</h3><div class="meta">${new Date(i.at).toLocaleString("id-ID",{dateStyle:"medium",timeStyle:"short"})} · ${esc(i.exp)}</div></div><span class="tag">${i.kind}</span></div>
+    ${i.arts.map(a=>`<div class="li"><span>${esc(a.name)}<br><em>${esc(a.code)} · ${esc(a.mc)}${a.bin?" · BIN "+esc(a.bin):""}</em></span><b>×${a.qty}</b></div>`).join("")}
+    <div class="tools"><select class="kd" aria-label="Kategori">${Object.keys(KC).map(k=>`<option ${k===i.kind?"selected":""}>${k}</option>`).join("")}</select>${i.kind==="PEMINJAMAN BARANG"?'<button class="toret">UBAH KE RETUR</button>':""}</div>
+    <div class="steps">${ORD.map(n=>`<button data-s="${n}" class="${n===i.step?"on s"+n:""}${n===0&&i.step!==0?" dim":""}">${STEPS[n]}</button>`).join("")}</div>
+    <div class="edit"><div><label>Keterangan</label><input class="nt" value="${esc(i.note)}" placeholder="mis. READY"></div><div><label>No. STO</label><input class="st" value="${esc(i.sto)}" placeholder="Nomor STO"></div><button class="btn sv">Simpan</button></div>
+    <div class="ft"><span>${i.arts.length} artikel</span><button class="del">Hapus</button></div></article>`).join(""):'<div class="empty">Belum ada permintaan yang cocok.</div>';
+}
+function render(){
+  renderDash();renderTop();renderAdmin();
+  const cnt=k=>k==="Semua"?items.length:k==="BELUM READY"?items.filter(i=>i.step===0).length:items.filter(i=>i.kind===k).length;
+  $("#chips").innerHTML=["Semua","BELUM READY","EA Delivery","EA Pick Up","Retur Barang","PEMINJAMAN BARANG"].map(k=>`<button class="chip ${KC[k]||""}" data-f="${k}" aria-pressed="${filter===k}"><b>${cnt(k)}</b><span>${k}</span></button>`).join("");
+  const q=$("#q").value.trim().toLowerCase();
+  const v=items.filter(i=>(filter==="Semua"||(filter==="BELUM READY"?i.step===0:i.kind===filter))&&(!q||(i.site+i.sname+i.sto+i.arts.map(a=>a.code+a.name).join(" ")).toLowerCase().includes(q)));
+  $("#list").innerHTML=v.length?v.map(i=>`<article class="tk ${KC[i.kind]}" data-id="${i.id}">
+    <div class="top"><div><h3><span class="code">${esc(i.site)}</span>${esc(i.sname)}</h3><div class="meta">${new Date(i.at).toLocaleString("id-ID",{dateStyle:"medium",timeStyle:"short"})} · ${esc(i.exp)}</div></div><span class="tag">${i.kind}</span></div>
+    ${i.arts.map(a=>`<div class="li"><span>${esc(a.name)}<br><em>${esc(a.code)} · ${esc(a.mc)}${a.bin?" · BIN "+esc(a.bin):""}</em></span><b>×${a.qty}</b></div>`).join("")}
+    <div class="steps ro">${ORD.map(n=>`<span class="${n===i.step?"on s"+n:""}${n===0&&i.step!==0?" dim":""}">${STEPS[n]}</span>`).join("")}</div>
+    <div class="info"><div><small>Keterangan</small><b>${esc(i.note)||"-"}</b></div><div><small>No. STO</small><b>${esc(i.sto)||"-"}</b></div></div>
+    <div class="ft"><span>${i.arts.length} artikel</span><span>${ago(new Date(i.at).getTime())}</span></div></article>`).join(""):`<div class="empty">${items.length?"Tidak ada data yang cocok.":"Belum ada permintaan. Isi form untuk membuat yang pertama."}</div>`;
+}
+$("#chips").onclick=e=>{const b=e.target.closest("[data-f]");if(b){filter=b.dataset.f;render()}};
+$("#q").oninput=render;
+$("#list").onclick=e=>{
+  const t=e.target.closest(".tk");if(!t)return;const it=items.find(x=>x.id==t.dataset.id);
+  const s=e.target.closest("[data-s]");
+  if(s){it.step=+s.dataset.s;save();render()}
+  else if(e.target.closest(".sv")){it.note=t.querySelector(".nt").value.trim();it.sto=t.querySelector(".st").value.trim();save();toast("Perubahan disimpan")}
+  else if(e.target.closest(".del")&&confirm("Hapus permintaan ini?")){items=items.filter(x=>x!==it);save();render()}
+};
+const ADMIN_PIN="2002";let unl=false,afs=-1;
+setTimeout(()=>$("#ld").classList.add("off"),1500);
+document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.t==="dash"));
+function openAdmin(){unl=true;$("#pin").classList.remove("on");document.body.dataset.tab="admin";document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("on"));renderAdmin();scrollTo(0,0)}
+$("#adminBtn").onclick=()=>{if(unl)return openAdmin();$("#pinv").value="";$("#pin").classList.add("on");setTimeout(()=>$("#pinv").focus(),50)};
+$("#pinok").onclick=()=>{if($("#pinv").value===ADMIN_PIN)openAdmin();else{toast("PIN salah");$("#pinv").value=""}};
+$("#pinx").onclick=()=>$("#pin").classList.remove("on");
+$("#pinv").onkeydown=e=>{if(e.key==="Enter")$("#pinok").click()};
+$("#afs").onclick=e=>{const b=e.target.closest("[data-a]");if(b){afs=+b.dataset.a;renderAdmin()}};
+$("#aq").oninput=renderAdmin;
+$("#admlist").onclick=e=>{const t=e.target.closest(".tk");if(!t)return;const it=items.find(x=>x.id==t.dataset.id);if(!it)return;const s=e.target.closest("[data-s]");
+  if(s){it.step=+s.dataset.s;save();render();toast("Status: "+STEPS[it.step])}
+  else if(e.target.closest(".sv")){it.note=t.querySelector(".nt").value.trim();it.sto=t.querySelector(".st").value.trim();if(it.sto&&it.step<1){it.step=1;if(!it.note)it.note="READY"}save();render();toast("Tersimpan")}
+  else if(e.target.closest(".toret")){it.kind="Retur Barang";save();render();toast("Diubah menjadi RETUR BARANG")}
+  else if(e.target.closest(".del")){const b=e.target.closest(".del");if(b.dataset.arm){items=items.filter(x=>x!==it);save();render();toast("Dihapus")}else{b.dataset.arm=1;b.textContent="Yakin hapus?";setTimeout(()=>{b.dataset.arm="";b.textContent="Hapus"},3000)}}};
+$("#admlist").onchange=e=>{const k=e.target.closest(".kd");if(!k)return;const t=e.target.closest(".tk");const it=items.find(x=>x.id==t.dataset.id);if(it){it.kind=k.value;save();render();toast("Kategori diperbarui")}};
+$("#range").onclick=e=>{const b=e.target.closest("[data-r]");if(!b)return;rng=+b.dataset.r;document.querySelectorAll("#range button").forEach(x=>x.classList.toggle("on",x===b));renderDash()};
+$("#nav").onclick=e=>{const b=e.target.closest("[data-t]");if(!b)return;document.body.dataset.tab=b.dataset.t;document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x===b));scrollTo(0,0)};
+function tick(){const n=new Date();$("#clk").textContent=n.toLocaleTimeString("id-ID",{hour12:false}).replace(/\./g,":");$("#dt").textContent=n.toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"})}tick();setInterval(tick,1000);
+$("#theme").onclick=()=>{const r=document.documentElement,d=r.dataset.theme==="light";r.dataset.theme=d?"dark":"light"};
+render();
+if(REMOTE){load();setInterval(()=>{const a=document.activeElement;if(a&&/INPUT|SELECT/.test(a.tagName))return;load()},30000)}
+</script>
+</body>
+</html>
