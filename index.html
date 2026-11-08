@@ -220,7 +220,7 @@ function save(){
 }
 function fillLists(){
   $("#sites").innerHTML=Object.keys(SITES).map(k=>`<option value="${k}">${esc(SITES[k])}</option>`).join("");
-  $("#arts").innerHTML=Object.keys(ARTS).map(k=>`<option value="${k}">${esc(ARTS[k][0])}</option>`).join("");
+  $("#artlist").innerHTML=Object.keys(ARTS).map(k=>`<option value="${k}">${esc(ARTS[k][0])}</option>`).join("");
 }
 async function load(){
   try{
@@ -240,14 +240,14 @@ $("#site").oninput=e=>{$("#sname").value=SITES[e.target.value.trim()]||""};
 function artRow(){
   const d=document.createElement("div");d.className="art";
   d.innerHTML=`<div class="t"><span>Artikel</span><button class="x" type="button" aria-label="Hapus artikel">×</button></div>
-  <div class="row"><div><label>Kode artikel</label><input class="ac" list="arts" inputmode="numeric" placeholder="mis. 910008424008"></div>
+  <div class="row"><div><label>Kode artikel</label><input class="ac" list="artlist" inputmode="numeric" placeholder="mis. 910008424008"></div>
   <div><label>Jumlah</label><input class="qt" type="number" min="1" value="1"></div></div>
   <label>Nama artikel</label><input class="an" readonly placeholder="Terisi otomatis dari master"><div class="row2"><div><label>BIN</label><input class="bn" readonly placeholder="Otomatis"></div><div><label>MC Lv 3</label><input class="mcv" readonly placeholder="Otomatis"></div></div>`;
   d.querySelector(".ac").oninput=e=>{const a=ARTS[e.target.value.trim()];d.querySelector(".an").value=a?a[0]:"";d.querySelector(".bn").value=a?a[2]:"";d.querySelector(".mcv").value=a?a[1]:""};
   d.querySelector(".x").onclick=()=>{if($("#arts").children.length>1)d.remove()};
   $("#arts").appendChild(d);
 }
-const dl=document.createElement("datalist");dl.id="arts";dl.innerHTML=Object.keys(ARTS).map(k=>`<option value="${k}">${esc(ARTS[k][0])}</option>`).join("");document.body.appendChild(dl);
+const dl=document.createElement("datalist");dl.id="artlist";dl.innerHTML=Object.keys(ARTS).map(k=>`<option value="${k}">${esc(ARTS[k][0])}</option>`).join("");document.body.appendChild(dl);
 $("#addArt").onclick=artRow;artRow();
 
 $("#submit").onclick=()=>{
